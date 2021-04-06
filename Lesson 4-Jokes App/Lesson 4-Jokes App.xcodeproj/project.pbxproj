@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -14,6 +14,7 @@
 		3A174840261820F5006BF21A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A17483E261820F5006BF21A /* Main.storyboard */; };
 		3A174842261820F7006BF21A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A174841261820F7006BF21A /* Assets.xcassets */; };
 		3A174845261820F7006BF21A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A174843261820F7006BF21A /* LaunchScreen.storyboard */; };
+		3A8CA716261C4E0D0021FB96 /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8CA715261C4E0D0021FB96 /* PostViewController.swift */; };
 		3AD13697261C42EB00AE2E41 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3AD13696261C42EB00AE2E41 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
@@ -26,6 +27,7 @@
 		3A174841261820F7006BF21A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3A174844261820F7006BF21A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3A174846261820F7006BF21A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3A8CA715261C4E0D0021FB96 /* PostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
 		3AD13696261C42EB00AE2E41 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		88D742422042EA06B1F00FD5 /* Pods-Lesson 4-Jokes App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lesson 4-Jokes App.release.xcconfig"; path = "Target Support Files/Pods-Lesson 4-Jokes App/Pods-Lesson 4-Jokes App.release.xcconfig"; sourceTree = "<group>"; };
 		A2D9624110A3F09E841FEABD /* Pods-Lesson 4-Jokes App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lesson 4-Jokes App.debug.xcconfig"; path = "Target Support Files/Pods-Lesson 4-Jokes App/Pods-Lesson 4-Jokes App.debug.xcconfig"; sourceTree = "<group>"; };
@@ -50,7 +52,6 @@
 				A2D9624110A3F09E841FEABD /* Pods-Lesson 4-Jokes App.debug.xcconfig */,
 				88D742422042EA06B1F00FD5 /* Pods-Lesson 4-Jokes App.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -77,7 +78,7 @@
 			children = (
 				3A174838261820F5006BF21A /* AppDelegate.swift */,
 				3A17483A261820F5006BF21A /* SceneDelegate.swift */,
-				3A17483C261820F5006BF21A /* ViewController.swift */,
+				3A8CA719261C4E140021FB96 /* View Controllers */,
 				3A17483E261820F5006BF21A /* Main.storyboard */,
 				3A174841261820F7006BF21A /* Assets.xcassets */,
 				3A174843261820F7006BF21A /* LaunchScreen.storyboard */,
@@ -85,6 +86,15 @@
 				3AD13696261C42EB00AE2E41 /* GoogleService-Info.plist */,
 			);
 			path = "Lesson 4-Jokes App";
+			sourceTree = "<group>";
+		};
+		3A8CA719261C4E140021FB96 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				3A8CA715261C4E0D0021FB96 /* PostViewController.swift */,
+				3A17483C261820F5006BF21A /* ViewController.swift */,
+			);
+			path = "View Controllers";
 			sourceTree = "<group>";
 		};
 		993D9D838E3A06F767916A6A /* Frameworks */ = {
@@ -210,6 +220,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A8CA716261C4E0D0021FB96 /* PostViewController.swift in Sources */,
 				3A17483D261820F5006BF21A /* ViewController.swift in Sources */,
 				3A174839261820F5006BF21A /* AppDelegate.swift in Sources */,
 				3A17483B261820F5006BF21A /* SceneDelegate.swift in Sources */,

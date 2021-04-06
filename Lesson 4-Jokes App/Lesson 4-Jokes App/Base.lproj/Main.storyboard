@@ -16,33 +16,131 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="JOKE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bsH-ME-Pea">
-                                <rect key="frame" x="186" y="169" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="NpB-nv-pdO">
+                                <rect key="frame" x="0.0" y="94" width="414" height="768"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="Z1a-gH-nGG">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Z1a-gH-nGG" id="cWm-aO-Aom">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cS8-o6-f2C">
+                                <rect key="frame" x="20" y="49" width="60" height="37"/>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="17"/>
+                                <state key="normal" title="Post">
+                                    <color key="titleColor" red="1" green="0.18142545090000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <connections>
+                                    <action selector="AddPost:" destination="BYZ-38-t0r" eventType="touchUpInside" id="T1t-Ti-AS3"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="bsH-ME-Pea" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="125" id="XbH-RW-8OH"/>
-                            <constraint firstItem="bsH-ME-Pea" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="186" id="gF5-BW-QeS"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="bsH-ME-Pea" secondAttribute="trailing" constant="186" id="h4n-4B-U5E"/>
+                            <constraint firstItem="cS8-o6-f2C" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="EwV-my-gJs"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="NpB-nv-pdO" secondAttribute="bottom" id="GvK-rl-knR"/>
+                            <constraint firstItem="NpB-nv-pdO" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Swa-70-hY5"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="cS8-o6-f2C" secondAttribute="trailing" constant="334" id="Vkd-cP-Kvu"/>
+                            <constraint firstItem="NpB-nv-pdO" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="50" id="cVm-ff-3Z4"/>
+                            <constraint firstItem="cS8-o6-f2C" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="5" id="eRn-Qx-ssT"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="NpB-nv-pdO" secondAttribute="trailing" id="j35-pc-NTY"/>
+                            <constraint firstItem="NpB-nv-pdO" firstAttribute="top" secondItem="cS8-o6-f2C" secondAttribute="bottom" constant="8" symbolic="YES" id="pGL-yr-Cm5"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="test" destination="bsH-ME-Pea" id="VIY-Rs-fK3"/>
+                        <outlet property="postJokes" destination="NpB-nv-pdO" id="ORh-xg-6MQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="13.043478260869566" y="88.392857142857139"/>
         </scene>
+        <!--Post View Controller-->
+        <scene sceneID="bD2-Y0-6ev">
+            <objects>
+                <viewController storyboardIdentifier="Post" useStoryboardIdentifierAsRestorationIdentifier="YES" id="V5g-Pz-egJ" customClass="PostViewController" customModule="Lesson_4_Jokes_App" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="9cw-wC-aW9">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ADZ-Yw-xzW">
+                                <rect key="frame" x="0.0" y="74" width="95" height="38"/>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="18"/>
+                                <state key="normal" title="Cancel">
+                                    <color key="titleColor" red="1" green="0.18142545090000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <connections>
+                                    <action selector="goHome:" destination="V5g-Pz-egJ" eventType="touchUpInside" id="f1u-dc-dhZ"/>
+                                </connections>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="D4Y-4h-thJ">
+                                <rect key="frame" x="10" y="112" width="394" height="750"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Post A Joke!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QoW-1b-Kkn">
+                                        <rect key="frame" x="0.0" y="0.0" width="394" height="24.5"/>
+                                        <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0ZN-XF-Jpl">
+                                        <rect key="frame" x="0.0" y="48.5" width="394" height="640.5"/>
+                                        <subviews>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mlK-EL-li1">
+                                                <rect key="frame" x="0.0" y="0.0" width="394" height="640.5"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" enablesReturnKeyAutomatically="YES"/>
+                                            </textView>
+                                        </subviews>
+                                    </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3fb-uQ-Wf7">
+                                        <rect key="frame" x="0.0" y="713" width="394" height="37"/>
+                                        <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="17"/>
+                                        <state key="normal" title="Confirm">
+                                            <color key="titleColor" systemColor="systemGreenColor"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="submitPost:" destination="V5g-Pz-egJ" eventType="touchUpInside" id="HZi-pp-6B6"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="o6X-aj-p1P"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="o6X-aj-p1P" firstAttribute="bottom" secondItem="ADZ-Yw-xzW" secondAttribute="bottom" constant="750" id="1DS-tv-l8K"/>
+                            <constraint firstItem="o6X-aj-p1P" firstAttribute="trailing" secondItem="ADZ-Yw-xzW" secondAttribute="trailing" constant="319" id="3WF-8N-Vjl"/>
+                            <constraint firstItem="ADZ-Yw-xzW" firstAttribute="leading" secondItem="o6X-aj-p1P" secondAttribute="leading" id="JaD-se-TSR"/>
+                            <constraint firstItem="ADZ-Yw-xzW" firstAttribute="top" secondItem="o6X-aj-p1P" secondAttribute="top" constant="30" id="NGA-cp-sc9"/>
+                            <constraint firstItem="D4Y-4h-thJ" firstAttribute="trailing" secondItem="o6X-aj-p1P" secondAttribute="trailing" constant="-10" id="akG-JO-Jfa"/>
+                            <constraint firstItem="o6X-aj-p1P" firstAttribute="bottom" secondItem="D4Y-4h-thJ" secondAttribute="bottom" id="ojZ-25-Gw4"/>
+                            <constraint firstItem="D4Y-4h-thJ" firstAttribute="leading" secondItem="o6X-aj-p1P" secondAttribute="leading" constant="10" id="w1n-al-N51"/>
+                            <constraint firstItem="D4Y-4h-thJ" firstAttribute="top" secondItem="ADZ-Yw-xzW" secondAttribute="bottom" id="z9u-j3-aGe"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="SubmissionField" destination="D4Y-4h-thJ" id="rMf-S6-RQL"/>
+                        <outlet property="TextField" destination="mlK-EL-li1" id="yAK-hX-0rL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Oyz-Mu-CxF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="885.50724637681162" y="87.723214285714278"/>
+        </scene>
     </scenes>
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
