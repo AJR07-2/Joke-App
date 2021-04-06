@@ -21,6 +21,7 @@ class ViewController: UIViewController {
         let db = FirebaseFirestore.Firestore.firestore()
         
         db.collection("test").document("woo").setData(["HIII" : 1])
+        print("interesting")
     }
 
 }
