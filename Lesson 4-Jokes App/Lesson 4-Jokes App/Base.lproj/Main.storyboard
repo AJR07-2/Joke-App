@@ -16,13 +16,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TRb-ed-znf">
-                                <rect key="frame" x="126" y="433" width="162" height="30"/>
-                                <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
-                                <state key="normal" title="Reveal Next Joke">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="JOKE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bsH-ME-Pea">
                                 <rect key="frame" x="186" y="169" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -33,16 +26,14 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="TRb-ed-znf" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="389" id="0bZ-OK-PJE"/>
-                            <constraint firstItem="TRb-ed-znf" firstAttribute="top" secondItem="bsH-ME-Pea" secondAttribute="bottom" constant="243" id="EEA-CN-DWw"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="TRb-ed-znf" secondAttribute="trailing" constant="126" id="NXx-8h-bkq"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="TRb-ed-znf" secondAttribute="bottom" constant="399" id="T6B-Mp-Kru"/>
                             <constraint firstItem="bsH-ME-Pea" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="125" id="XbH-RW-8OH"/>
-                            <constraint firstItem="TRb-ed-znf" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="126" id="e8Y-kn-oEJ"/>
                             <constraint firstItem="bsH-ME-Pea" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="186" id="gF5-BW-QeS"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="bsH-ME-Pea" secondAttribute="trailing" constant="186" id="h4n-4B-U5E"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="test" destination="bsH-ME-Pea" id="VIY-Rs-fK3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -50,9 +41,6 @@
         </scene>
     </scenes>
     <resources>
-        <systemColor name="opaqueSeparatorColor">
-            <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

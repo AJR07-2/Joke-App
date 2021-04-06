@@ -7,12 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		02B2BA47BAE9D467EC7F6BB8 /* Pods_Lesson_4_Jokes_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D43D8329915E005BDD2286CE /* Pods_Lesson_4_Jokes_App.framework */; };
 		3A174839261820F5006BF21A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A174838261820F5006BF21A /* AppDelegate.swift */; };
 		3A17483B261820F5006BF21A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A17483A261820F5006BF21A /* SceneDelegate.swift */; };
 		3A17483D261820F5006BF21A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A17483C261820F5006BF21A /* ViewController.swift */; };
 		3A174840261820F5006BF21A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A17483E261820F5006BF21A /* Main.storyboard */; };
 		3A174842261820F7006BF21A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A174841261820F7006BF21A /* Assets.xcassets */; };
 		3A174845261820F7006BF21A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A174843261820F7006BF21A /* LaunchScreen.storyboard */; };
+		3AD13697261C42EB00AE2E41 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3AD13696261C42EB00AE2E41 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,10 @@
 		3A174841261820F7006BF21A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3A174844261820F7006BF21A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3A174846261820F7006BF21A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3AD13696261C42EB00AE2E41 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		88D742422042EA06B1F00FD5 /* Pods-Lesson 4-Jokes App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lesson 4-Jokes App.release.xcconfig"; path = "Target Support Files/Pods-Lesson 4-Jokes App/Pods-Lesson 4-Jokes App.release.xcconfig"; sourceTree = "<group>"; };
+		A2D9624110A3F09E841FEABD /* Pods-Lesson 4-Jokes App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lesson 4-Jokes App.debug.xcconfig"; path = "Target Support Files/Pods-Lesson 4-Jokes App/Pods-Lesson 4-Jokes App.debug.xcconfig"; sourceTree = "<group>"; };
+		D43D8329915E005BDD2286CE /* Pods_Lesson_4_Jokes_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Lesson_4_Jokes_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +37,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				02B2BA47BAE9D467EC7F6BB8 /* Pods_Lesson_4_Jokes_App.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		072A04C90CCDB536E3DE0523 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A2D9624110A3F09E841FEABD /* Pods-Lesson 4-Jokes App.debug.xcconfig */,
+				88D742422042EA06B1F00FD5 /* Pods-Lesson 4-Jokes App.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		3A17482C261820F5006BF21A = {
 			isa = PBXGroup;
 			children = (
 				3A174837261820F5006BF21A /* Lesson 4-Jokes App */,
 				3A174836261820F5006BF21A /* Products */,
+				072A04C90CCDB536E3DE0523 /* Pods */,
+				993D9D838E3A06F767916A6A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -63,8 +82,17 @@
 				3A174841261820F7006BF21A /* Assets.xcassets */,
 				3A174843261820F7006BF21A /* LaunchScreen.storyboard */,
 				3A174846261820F7006BF21A /* Info.plist */,
+				3AD13696261C42EB00AE2E41 /* GoogleService-Info.plist */,
 			);
 			path = "Lesson 4-Jokes App";
+			sourceTree = "<group>";
+		};
+		993D9D838E3A06F767916A6A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D43D8329915E005BDD2286CE /* Pods_Lesson_4_Jokes_App.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +102,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3A174849261820F7006BF21A /* Build configuration list for PBXNativeTarget "Lesson 4-Jokes App" */;
 			buildPhases = (
+				EA72EFDB14AAD0BFB0BDECBA /* [CP] Check Pods Manifest.lock */,
 				3A174831261820F5006BF21A /* Sources */,
 				3A174832261820F5006BF21A /* Frameworks */,
 				3A174833261820F5006BF21A /* Resources */,
+				C0B71E372AF87677C5051548 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -125,12 +155,55 @@
 			buildActionMask = 2147483647;
 			files = (
 				3A174845261820F7006BF21A /* LaunchScreen.storyboard in Resources */,
+				3AD13697261C42EB00AE2E41 /* GoogleService-Info.plist in Resources */,
 				3A174842261820F7006BF21A /* Assets.xcassets in Resources */,
 				3A174840261820F5006BF21A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		C0B71E372AF87677C5051548 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Lesson 4-Jokes App/Pods-Lesson 4-Jokes App-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Lesson 4-Jokes App/Pods-Lesson 4-Jokes App-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Lesson 4-Jokes App/Pods-Lesson 4-Jokes App-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EA72EFDB14AAD0BFB0BDECBA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Lesson 4-Jokes App-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		3A174831261820F5006BF21A /* Sources */ = {
@@ -283,6 +356,7 @@
 		};
 		3A17484A261820F7006BF21A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A2D9624110A3F09E841FEABD /* Pods-Lesson 4-Jokes App.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -302,6 +376,7 @@
 		};
 		3A17484B261820F7006BF21A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 88D742422042EA06B1F00FD5 /* Pods-Lesson 4-Jokes App.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
