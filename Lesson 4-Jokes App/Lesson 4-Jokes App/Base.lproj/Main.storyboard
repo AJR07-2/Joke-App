@@ -19,16 +19,6 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="NpB-nv-pdO">
                                 <rect key="frame" x="0.0" y="94" width="414" height="768"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="Z1a-gH-nGG">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Z1a-gH-nGG" id="cWm-aO-Aom">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cS8-o6-f2C">
                                 <rect key="frame" x="20" y="49" width="60" height="37"/>
@@ -40,18 +30,32 @@
                                     <action selector="AddPost:" destination="BYZ-38-t0r" eventType="touchUpInside" id="T1t-Ti-AS3"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cPy-Hy-Ygw">
+                                <rect key="frame" x="355" y="51" width="37" height="37"/>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="17"/>
+                                <state key="normal" title="Sync">
+                                    <color key="titleColor" red="0.26588070190000002" green="1" blue="0.31122630220000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <connections>
+                                    <action selector="Sync:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RCg-zy-6LS"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="cS8-o6-f2C" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="EwV-my-gJs"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="NpB-nv-pdO" secondAttribute="bottom" id="GvK-rl-knR"/>
+                            <constraint firstItem="cPy-Hy-Ygw" firstAttribute="leading" secondItem="cS8-o6-f2C" secondAttribute="trailing" constant="275" id="Qao-64-DvN"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="cPy-Hy-Ygw" secondAttribute="trailing" constant="22" id="RwY-0g-lfw"/>
                             <constraint firstItem="NpB-nv-pdO" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Swa-70-hY5"/>
+                            <constraint firstItem="cPy-Hy-Ygw" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="7" id="TYG-V1-GuT"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="cS8-o6-f2C" secondAttribute="trailing" constant="334" id="Vkd-cP-Kvu"/>
                             <constraint firstItem="NpB-nv-pdO" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="50" id="cVm-ff-3Z4"/>
                             <constraint firstItem="cS8-o6-f2C" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="5" id="eRn-Qx-ssT"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="NpB-nv-pdO" secondAttribute="trailing" id="j35-pc-NTY"/>
                             <constraint firstItem="NpB-nv-pdO" firstAttribute="top" secondItem="cS8-o6-f2C" secondAttribute="bottom" constant="8" symbolic="YES" id="pGL-yr-Cm5"/>
+                            <constraint firstItem="NpB-nv-pdO" firstAttribute="top" secondItem="cPy-Hy-Ygw" secondAttribute="bottom" constant="6" id="wha-3P-NGp"/>
                         </constraints>
                     </view>
                     <connections>
@@ -95,10 +99,17 @@
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mlK-EL-li1">
                                                 <rect key="frame" x="0.0" y="0.0" width="394" height="640.5"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences" enablesReturnKeyAutomatically="YES"/>
                                             </textView>
                                         </subviews>
                                     </stackView>
+                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="⚠️Joke is empty" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xvc-t6-xYz">
+                                        <rect key="frame" x="0.0" y="701" width="394" height="0.0"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="1" green="0.18142545090000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3fb-uQ-Wf7">
                                         <rect key="frame" x="0.0" y="713" width="394" height="37"/>
                                         <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="17"/>
@@ -128,6 +139,7 @@
                     <connections>
                         <outlet property="SubmissionField" destination="D4Y-4h-thJ" id="rMf-S6-RQL"/>
                         <outlet property="TextField" destination="mlK-EL-li1" id="yAK-hX-0rL"/>
+                        <outlet property="warning" destination="Xvc-t6-xYz" id="qMc-2s-R2f"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Oyz-Mu-CxF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

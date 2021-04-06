@@ -14,6 +14,7 @@ class PostViewController: UIViewController {
     
     @IBOutlet weak var SubmissionField: UIStackView!
     
+    @IBOutlet weak var warning: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,9 +31,14 @@ class PostViewController: UIViewController {
     @IBAction func submitPost(_ sender: Any) {
         let db = FirebaseFirestore.Firestore.firestore()
         
+        if(TextField.text == ""){
+            warning.isHidden = false
+            return
+        }
+        
         db.collection("Posts").addDocument(data:
         [
-            "Joke": TextField.text,
+            "Joke": TextField.text!,
             "User": "NIL",
             "Likes" : 0,
             "Dislikes": 0,
@@ -40,6 +46,7 @@ class PostViewController: UIViewController {
             "Comments": 0
         ]
         )
+        warning.isHidden = true
         
         self.dismiss(animated: true, completion: nil)
     }
