@@ -16,9 +16,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Jokes App" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s0L-16-2BO">
-                                <rect key="frame" x="94" y="193" width="226" height="511"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="joke" translatesAutoresizingMaskIntoConstraints="NO" id="osj-98-xio">
+                                <rect key="frame" x="20" y="314" width="374" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="2WV-Et-iBF"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Jokes App" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s0L-16-2BO">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="38"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -26,6 +31,15 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="s0L-16-2BO" secondAttribute="trailing" id="2VK-KX-0Bu"/>
+                            <constraint firstItem="osj-98-xio" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="270" id="3hu-SG-hkH"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="s0L-16-2BO" secondAttribute="bottom" id="6eI-Od-nNj"/>
+                            <constraint firstItem="osj-98-xio" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="7QK-NY-oSR"/>
+                            <constraint firstItem="s0L-16-2BO" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="FyY-4b-oeM"/>
+                            <constraint firstItem="s0L-16-2BO" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="P8S-Dg-yFU"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="osj-98-xio" secondAttribute="trailing" constant="20" id="XOQ-Bp-DSx"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -34,6 +48,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="joke" width="512" height="512"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

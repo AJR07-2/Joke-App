@@ -16,6 +16,7 @@ class ViewController: UIViewController {
     
     var timer:Timer = Timer()
     
+    //view did load
     override func viewDidLoad() {
         super.viewDidLoad()
         fetchPosts()
@@ -32,10 +33,12 @@ class ViewController: UIViewController {
         fetchPosts()
     }
     
+    //other button functions
     @IBAction func Sync(_ sender: Any) {
         fetchPosts()
     }
     
+    //Presenting other view controllers
     @IBAction func AddPost(_ sender: Any) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         
@@ -47,6 +50,17 @@ class ViewController: UIViewController {
         
     }
     
+    @IBAction func showProfile(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        
+        if let setting = storyboard.instantiateViewController(withIdentifier: "Settings") as? SettingsViewController{
+            self.present(setting, animated: true, completion: nil)
+        }else{
+            print("Something went wrong :(")
+        }
+    }
+    
+    //fetching post data from firebase
     func fetchPosts(){
         let database = FirebaseFirestore.Firestore.firestore()
         
@@ -65,6 +79,7 @@ class ViewController: UIViewController {
     }
 }
 
+//table view delegate and dataSource
 extension ViewController: UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         //show profile of person later

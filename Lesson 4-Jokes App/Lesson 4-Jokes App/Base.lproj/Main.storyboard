@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -16,12 +17,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" id="DVK-yi-GRY">
+                                <rect key="frame" x="0.0" y="426" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </stackView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="NpB-nv-pdO">
-                                <rect key="frame" x="0.0" y="94" width="414" height="768"/>
+                                <rect key="frame" x="0.0" y="118" width="414" height="744"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cS8-o6-f2C">
-                                <rect key="frame" x="20" y="49" width="60" height="37"/>
+                                <rect key="frame" x="20" y="44" width="33" height="37"/>
                                 <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="17"/>
                                 <state key="normal" title="Post">
                                     <color key="titleColor" red="1" green="0.18142545090000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -30,8 +35,8 @@
                                     <action selector="AddPost:" destination="BYZ-38-t0r" eventType="touchUpInside" id="T1t-Ti-AS3"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cPy-Hy-Ygw">
-                                <rect key="frame" x="355" y="51" width="37" height="37"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cPy-Hy-Ygw">
+                                <rect key="frame" x="20" y="81" width="37" height="29"/>
                                 <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="17"/>
                                 <state key="normal" title="Sync">
                                     <color key="titleColor" red="0.26588070190000002" green="1" blue="0.31122630220000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -40,22 +45,31 @@
                                     <action selector="Sync:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RCg-zy-6LS"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UMl-yK-wZu">
+                                <rect key="frame" x="365" y="44" width="29" height="24"/>
+                                <state key="normal" title="Button">
+                                    <imageReference key="image" image="person.circle" catalog="system" symbolScale="large"/>
+                                </state>
+                                <connections>
+                                    <action selector="showProfile:" destination="BYZ-38-t0r" eventType="touchUpInside" id="av8-aJ-PqK"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="cS8-o6-f2C" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="EwV-my-gJs"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="NpB-nv-pdO" secondAttribute="bottom" id="GvK-rl-knR"/>
-                            <constraint firstItem="cPy-Hy-Ygw" firstAttribute="leading" secondItem="cS8-o6-f2C" secondAttribute="trailing" constant="275" id="Qao-64-DvN"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="cPy-Hy-Ygw" secondAttribute="trailing" constant="22" id="RwY-0g-lfw"/>
-                            <constraint firstItem="NpB-nv-pdO" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Swa-70-hY5"/>
-                            <constraint firstItem="cPy-Hy-Ygw" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="7" id="TYG-V1-GuT"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="cS8-o6-f2C" secondAttribute="trailing" constant="334" id="Vkd-cP-Kvu"/>
-                            <constraint firstItem="NpB-nv-pdO" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="50" id="cVm-ff-3Z4"/>
-                            <constraint firstItem="cS8-o6-f2C" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="5" id="eRn-Qx-ssT"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="NpB-nv-pdO" secondAttribute="trailing" id="j35-pc-NTY"/>
-                            <constraint firstItem="NpB-nv-pdO" firstAttribute="top" secondItem="cS8-o6-f2C" secondAttribute="bottom" constant="8" symbolic="YES" id="pGL-yr-Cm5"/>
-                            <constraint firstItem="NpB-nv-pdO" firstAttribute="top" secondItem="cPy-Hy-Ygw" secondAttribute="bottom" constant="6" id="wha-3P-NGp"/>
+                            <constraint firstItem="cPy-Hy-Ygw" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="3K9-Yr-3On"/>
+                            <constraint firstItem="NpB-nv-pdO" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="6Cj-ZI-FJj"/>
+                            <constraint firstItem="NpB-nv-pdO" firstAttribute="top" secondItem="cPy-Hy-Ygw" secondAttribute="bottom" id="9RT-kH-6ZR"/>
+                            <constraint firstItem="UMl-yK-wZu" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="365" id="Bg2-oW-xEQ"/>
+                            <constraint firstItem="cS8-o6-f2C" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="HbG-dp-rwh"/>
+                            <constraint firstItem="cPy-Hy-Ygw" firstAttribute="top" secondItem="cS8-o6-f2C" secondAttribute="bottom" id="S6L-dz-07j"/>
+                            <constraint firstItem="cPy-Hy-Ygw" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="XgC-1t-V2Y"/>
+                            <constraint firstItem="NpB-nv-pdO" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="bFv-Wg-CRN"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="UMl-yK-wZu" secondAttribute="trailing" constant="20" id="etC-uV-mhc"/>
+                            <constraint firstItem="UMl-yK-wZu" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="kUT-FF-mQG"/>
+                            <constraint firstItem="cS8-o6-f2C" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="mg8-bV-cKJ"/>
+                            <constraint firstItem="NpB-nv-pdO" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="rWN-r9-3EC"/>
                         </constraints>
                     </view>
                     <connections>
@@ -146,8 +160,105 @@
             </objects>
             <point key="canvasLocation" x="885.50724637681162" y="87.723214285714278"/>
         </scene>
+        <!--Settings View Controller-->
+        <scene sceneID="ZKZ-Qy-BmC">
+            <objects>
+                <viewController storyboardIdentifier="Settings" modalPresentationStyle="fullScreen" id="I4i-rH-1ED" customClass="SettingsViewController" customModule="Lesson_4_Jokes_App" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="tC3-M4-UeV">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mbh-0I-sby">
+                                <rect key="frame" x="20" y="44" width="38" height="38"/>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="18"/>
+                                <state key="normal" title="Back">
+                                    <color key="titleColor" red="1" green="0.18142545090000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <connections>
+                                    <action selector="goHome:" destination="I4i-rH-1ED" eventType="touchUpInside" id="B6z-zU-j9i"/>
+                                </connections>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="GXq-ne-wAc" userLabel="Settings">
+                                <rect key="frame" x="0.0" y="82" width="414" height="780"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="kyl-qv-WBJ" userLabel="SignOut/Login">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="780"/>
+                                        <subviews>
+                                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cIO-BP-jWB">
+                                                <rect key="frame" x="-6" y="0.0" width="54" height="0.0"/>
+                                                <state key="normal" title="Sign Up">
+                                                    <color key="titleColor" systemColor="systemGreenColor"/>
+                                                </state>
+                                            </button>
+                                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0uH-Yr-Yhr">
+                                                <rect key="frame" x="0.0" y="0.0" width="42" height="0.0"/>
+                                                <state key="normal" title="Log In">
+                                                    <color key="titleColor" red="0.26588070190000002" green="1" blue="0.31122630220000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                </state>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="kyl-qv-WBJ" firstAttribute="top" secondItem="GXq-ne-wAc" secondAttribute="top" id="47u-Nj-EWa"/>
+                                    <constraint firstAttribute="trailing" secondItem="kyl-qv-WBJ" secondAttribute="trailing" id="AMk-mQ-APx"/>
+                                    <constraint firstItem="kyl-qv-WBJ" firstAttribute="leading" secondItem="GXq-ne-wAc" secondAttribute="leading" id="e68-VK-vlf"/>
+                                    <constraint firstAttribute="bottom" secondItem="kyl-qv-WBJ" secondAttribute="bottom" id="qYz-UM-j2O"/>
+                                    <constraint firstAttribute="width" constant="414" id="uwe-O3-TKb"/>
+                                    <constraint firstAttribute="height" constant="780" id="wFJ-ga-WUN"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="GQy-6O-GBr"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="GQy-6O-GBr" firstAttribute="bottom" secondItem="GXq-ne-wAc" secondAttribute="bottom" id="BUM-PH-3cM"/>
+                            <constraint firstItem="GXq-ne-wAc" firstAttribute="leading" secondItem="GQy-6O-GBr" secondAttribute="leading" id="FrL-37-tZv"/>
+                            <constraint firstItem="Mbh-0I-sby" firstAttribute="top" secondItem="GQy-6O-GBr" secondAttribute="top" id="fsd-PF-8vY"/>
+                            <constraint firstItem="GQy-6O-GBr" firstAttribute="trailing" secondItem="Mbh-0I-sby" secondAttribute="trailing" constant="356" id="kiT-v3-Tdb"/>
+                            <constraint firstItem="Mbh-0I-sby" firstAttribute="leading" secondItem="GQy-6O-GBr" secondAttribute="leading" constant="20" id="vBY-3F-PIM"/>
+                            <constraint firstItem="GXq-ne-wAc" firstAttribute="top" secondItem="Mbh-0I-sby" secondAttribute="bottom" id="wh2-Hp-oiO"/>
+                            <constraint firstItem="GQy-6O-GBr" firstAttribute="trailing" secondItem="GXq-ne-wAc" secondAttribute="trailing" id="xmB-BM-RQa"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ckw-oO-0f8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1615.9420289855075" y="87.723214285714278"/>
+        </scene>
+        <!--Login View Controller-->
+        <scene sceneID="AwF-FN-KV6">
+            <objects>
+                <viewController storyboardIdentifier="Login" id="52M-wk-kTU" customClass="LoginViewController" customModule="Lesson_4_Jokes_App" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="GlO-yP-6vY">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="hnL-Vc-Q9q"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kr7-Rt-QL7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2368" y="88"/>
+        </scene>
+        <!--Sign Up View Controller-->
+        <scene sceneID="hrZ-sa-iKi">
+            <objects>
+                <viewController storyboardIdentifier="SignUp" id="JEJ-pA-Wp3" customClass="SignUpViewController" customModule="Lesson_4_Jokes_App" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="tQF-SL-q4t">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="9Oo-TX-iNE"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sZz-8A-Pkw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3086" y="88"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="person.circle" catalog="system" width="128" height="121"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
