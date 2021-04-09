@@ -22,8 +22,14 @@
                                     <constraint firstAttribute="height" constant="100" id="2WV-Et-iBF"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Jokes App" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s0L-16-2BO">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading.... please wait" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U7S-ts-zi1">
+                                <rect key="frame" x="78" y="512" width="277" height="69"/>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Jokes App" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s0L-16-2BO">
+                                <rect key="frame" x="0.0" y="39" width="414" height="818"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="38"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -36,9 +42,13 @@
                             <constraint firstItem="osj-98-xio" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="270" id="3hu-SG-hkH"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="s0L-16-2BO" secondAttribute="bottom" id="6eI-Od-nNj"/>
                             <constraint firstItem="osj-98-xio" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="7QK-NY-oSR"/>
+                            <constraint firstItem="U7S-ts-zi1" firstAttribute="top" secondItem="osj-98-xio" secondAttribute="bottom" constant="98" id="8tz-Rs-dMl"/>
                             <constraint firstItem="s0L-16-2BO" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="FyY-4b-oeM"/>
                             <constraint firstItem="s0L-16-2BO" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="P8S-Dg-yFU"/>
+                            <constraint firstItem="U7S-ts-zi1" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="78" id="VNL-nj-Cox"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="osj-98-xio" secondAttribute="trailing" constant="20" id="XOQ-Bp-DSx"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="U7S-ts-zi1" secondAttribute="bottom" constant="281" id="cZB-3e-vUD"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="U7S-ts-zi1" secondAttribute="trailing" constant="59" id="wA4-PG-CIH"/>
                         </constraints>
                     </view>
                 </viewController>

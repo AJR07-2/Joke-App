@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class LoginViewController: UIViewController {
 
@@ -14,4 +15,12 @@ class LoginViewController: UIViewController {
 
     }
 
+    @IBAction func goHome(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func signIn(_ sender: Any) {
+        //TODO: implement sign in
+        self.dismiss(animated: true, completion: nil)
+    }
 }
