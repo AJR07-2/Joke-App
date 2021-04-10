@@ -211,7 +211,7 @@
                                                     <color key="titleColor" red="1" green="0.18142545090000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="signOut:" destination="I4i-rH-1ED" eventType="touchUpInside" id="i1G-nz-1cs"/>
+                                                    <action selector="signOut:" destination="I4i-rH-1ED" eventType="touchUpInside" id="dnv-oG-wdV"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -343,6 +343,10 @@
                             <constraint firstItem="hnL-Vc-Q9q" firstAttribute="trailing" secondItem="sti-BT-d9m" secondAttribute="trailing" constant="10" id="t6M-66-P89"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="email" destination="PbP-CH-RCz" id="p8k-DL-Zr5"/>
+                        <outlet property="password" destination="bxQ-i7-9ov" id="3cF-8B-JsJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kr7-Rt-QL7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -398,7 +402,6 @@
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="300" id="R0x-v5-ane"/>
                                                 </constraints>
-                                                <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>

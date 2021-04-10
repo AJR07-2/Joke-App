@@ -33,7 +33,26 @@ class SignUpViewController: UIViewController {
             return
         }
         
-        FirebaseAuth.Auth.auth().createUser(withEmail: email.text as! String, password: password.text as! String, completion: {[weak self] result, error in
+        FirebaseFirestore.Firestore.firestore().collection("User").getDocuments() { [self] (querySnapshot, err) in
+            if let err = err {
+                print("Error getting documents: \(err)")
+            } else {
+                for document in querySnapshot!.documents {
+                    let otherUsername = document.data()["username"]
+                    if(otherUsername as! String == username.text!){
+                        let alert = UIAlertController(title: "Error", message: "Username has been used before", preferredStyle: .alert)
+                        alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .cancel, handler: { _ in
+                        print("Unable to sign user up due to empty field")
+                        }))
+                        self.present(alert, animated: true, completion: nil)
+                        return
+                    }
+                }
+            }
+        }
+        
+        FirebaseAuth.Auth.auth().createUser(withEmail: email.text!, password: password.text!, completion: {[weak self] result, error in
+            
             guard let strongSelf = self else {
                 return
             }
@@ -48,18 +67,18 @@ class SignUpViewController: UIViewController {
                 return
             }
             
-            print("Sign in sucessful")
-            
-            //update firebase
-            let db = FirebaseFirestore.Firestore.firestore()
-            db.collection("User").document(FirebaseAuth.Auth.auth().currentUser?.uid as! String).setData([
-                "username": strongSelf.username.text as! String,
-                "email": strongSelf.email.text as! String,
-                "uid": FirebaseAuth.Auth.auth().currentUser!.uid,
-            ])
-            print("woo")
         })
-
+        print("Sign in sucessful")
+        let userID = FirebaseAuth.Auth.auth().currentUser?.uid
+        if(userID == nil){
+            return
+        }
+        FirebaseFirestore.Firestore.firestore().collection("User").addDocument(data: [
+            "username": username.text!,
+            "email": email.text!,
+            "uid": FirebaseAuth.Auth.auth().currentUser!.uid,
+        ])
+        
         self.dismiss(animated: true, completion: nil)
     }
     

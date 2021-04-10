@@ -7,6 +7,7 @@
 
 import UIKit
 import FirebaseFirestore
+import FirebaseAuth
 
 class ViewController: UIViewController {
     
@@ -40,6 +41,22 @@ class ViewController: UIViewController {
     
     //Presenting other view controllers
     @IBAction func AddPost(_ sender: Any) {
+        if(FirebaseAuth.Auth.auth().currentUser == nil){
+            let alert = UIAlertController(title: "You are not signed In", message: "", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: NSLocalizedString("Sign In", comment: "Default action"), style: .cancel, handler: { _ in
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                
+                if let settingsViewController = storyboard.instantiateViewController(withIdentifier: "Settings") as? SettingsViewController{
+                    self.present(settingsViewController, animated: true, completion: nil)
+                }else{
+                    print("Something went wrong :(")
+                }
+            }))
+            self.present(alert, animated: true, completion: nil)
+
+            return
+        }
+        
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         
         if let postViewController = storyboard.instantiateViewController(withIdentifier: "Post") as? PostViewController{
@@ -47,7 +64,6 @@ class ViewController: UIViewController {
         }else{
             print("Something went wrong :(")
         }
-        
     }
     
     @IBAction func showProfile(_ sender: Any) {
