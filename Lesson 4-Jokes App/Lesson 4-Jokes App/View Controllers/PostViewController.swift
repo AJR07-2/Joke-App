@@ -7,6 +7,7 @@
 
 import UIKit
 import FirebaseFirestore
+import FirebaseAuth
 
 class PostViewController: UIViewController {
 
@@ -30,6 +31,19 @@ class PostViewController: UIViewController {
     
     @IBAction func submitPost(_ sender: Any) {
         let db = FirebaseFirestore.Firestore.firestore()
+        let user = FirebaseAuth.Auth.auth().currentUser?.uid as! String
+        var username:String = ""
+        FirebaseFirestore.Firestore.firestore().collection("User").getDocuments() { [self] (querySnapshot, err) in
+            if let err = err {
+                print("Error getting documents: \(err)")
+            } else {
+                for document in querySnapshot!.documents {
+                    if(document.data()["uid"] as! String == FirebaseAuth.Auth.auth().currentUser?.uid as! String){
+                        username = document.data()["username"] as! String
+                    }
+                }
+            }
+        }
         
         if(TextField.text == ""){
             warning.isHidden = false
@@ -39,7 +53,8 @@ class PostViewController: UIViewController {
         db.collection("Posts").addDocument(data:
         [
             "Joke": TextField.text!,
-            "User": "NIL",
+            "UserID": user,
+            "User": username,
             "Likes" : 0,
             "Dislikes": 0,
             "DateCreated": Date(),

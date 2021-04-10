@@ -113,7 +113,7 @@ extension ViewController: UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = postJokes.dequeueReusableCell(withIdentifier: "Post", for: indexPath) as! Post
         let data = jokes[indexPath[1]]
-        cell.Username.text = "None"
+        cell.Username.text = "\(data["User"])"
         cell.Number.text = "\(indexPath[1] + 1)"
         cell.Joke.text = "\(data["Joke"] as! String)"
         
