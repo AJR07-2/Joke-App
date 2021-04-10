@@ -28,7 +28,7 @@ class ViewController: UIViewController {
         postJokes.delegate = self
         postJokes.dataSource = self
         
-        timer = Timer.scheduledTimer(withTimeInterval: 60, repeats: true, block: { [self] (_) in
+        timer = Timer.scheduledTimer(withTimeInterval: 20, repeats: true, block: { [self] (_) in
             fetchPosts()
         })
         fetchPosts()
@@ -123,8 +123,10 @@ extension ViewController: UITableViewDataSource{
         cell.Number.text = "\(indexPath[1] + 1)"
         cell.Joke.text = "\(data["Joke"] as! String)"
         cell.punchLine.text = "\(data["PunchLine"] as! String)"
+        cell.votes.text = "\(data["Rating"] as! Int)"
+        print(data)
         
-        //UI Improvements
+        //UI Improvementsr
         cell.Joke.layer.cornerRadius = 10
         cell.Joke.layer.masksToBounds = true
         cell.punchLine.layer.cornerRadius = 10

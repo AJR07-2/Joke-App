@@ -57,16 +57,18 @@ class PostViewController: UIViewController {
                     warning.isHidden = false
                     return
                 }
-                db.collection("Posts").addDocument(data:
-                [
+                
+                let docID = "\(UUID())"
+                db.collection("Posts").document(docID).setData([
                     "Joke": TextField.text!,
                     "PunchLine": punchLineSubmissionField.text!,
                     "UserID": user,
                     "User": username,
-                    "Likes" : 0,
-                    "Dislikes": 0,
                     "DateCreated": Date(),
-                    "Comments": 0
+                    "Comments": 0,
+                    "Upvotes" : 0,
+                    "Downvotes": 0,
+                    "Rating": 0
                 ]
                 )
                 warning.isHidden = true
