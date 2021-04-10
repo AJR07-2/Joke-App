@@ -107,25 +107,55 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0ZN-XF-Jpl">
-                                        <rect key="frame" x="0.0" y="48.5" width="394" height="640.5"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="0ZN-XF-Jpl">
+                                        <rect key="frame" x="0.0" y="48.5" width="394" height="570"/>
                                         <subviews>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mlK-EL-li1">
-                                                <rect key="frame" x="0.0" y="0.0" width="394" height="640.5"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Joke:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fzK-2q-cWy">
+                                                <rect key="frame" x="0.0" y="0.0" width="394" height="20"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="20" id="3Ko-vQ-DeH"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="20"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mlK-EL-li1" userLabel="JokeTextField">
+                                                <rect key="frame" x="0.0" y="30" width="394" height="250"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="250" id="m5W-Ur-gOh"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" enablesReturnKeyAutomatically="YES"/>
+                                            </textView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Punch Line:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a7L-CH-wiU">
+                                                <rect key="frame" x="0.0" y="290" width="394" height="20"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="20" id="IqN-lE-fdD"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="20"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uaV-rF-UkV" userLabel="PunchLineTextField">
+                                                <rect key="frame" x="0.0" y="320" width="394" height="250"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="250" id="Nng-g5-XeB"/>
+                                                </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences" enablesReturnKeyAutomatically="YES"/>
                                             </textView>
                                         </subviews>
                                     </stackView>
                                     <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="⚠️Joke is empty" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xvc-t6-xYz">
-                                        <rect key="frame" x="0.0" y="701" width="394" height="0.0"/>
+                                        <rect key="frame" x="0.0" y="630.5" width="394" height="0.0"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="1" green="0.18142545090000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3fb-uQ-Wf7">
-                                        <rect key="frame" x="0.0" y="713" width="394" height="37"/>
+                                        <rect key="frame" x="0.0" y="642.5" width="394" height="107.5"/>
                                         <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="17"/>
                                         <state key="normal" title="Confirm">
                                             <color key="titleColor" systemColor="systemGreenColor"/>
@@ -151,9 +181,9 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="SubmissionField" destination="D4Y-4h-thJ" id="rMf-S6-RQL"/>
                         <outlet property="TextField" destination="mlK-EL-li1" id="yAK-hX-0rL"/>
-                        <outlet property="warning" destination="Xvc-t6-xYz" id="qMc-2s-R2f"/>
+                        <outlet property="punchLineSubmissionField" destination="uaV-rF-UkV" id="2dk-Cj-SPN"/>
+                        <outlet property="warning" destination="Xvc-t6-xYz" id="vCJ-24-48M"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Oyz-Mu-CxF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

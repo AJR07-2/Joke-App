@@ -106,16 +106,29 @@ extension ViewController: UITableViewDelegate{
 
 extension ViewController: UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
+        if(jokes.count == 0){
+            postJokes.isHidden = true
+        }else{
+            postJokes.isHidden = false
+        }
         return jokes.count
     }
     
+    //customise each cell
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = postJokes.dequeueReusableCell(withIdentifier: "Post", for: indexPath) as! Post
         let data = jokes[indexPath[1]]
-        cell.Username.text = "\(data["User"])"
+        
+        cell.Username.text = "\(data["User"] as! String)"
         cell.Number.text = "\(indexPath[1] + 1)"
         cell.Joke.text = "\(data["Joke"] as! String)"
+        cell.punchLine.text = "\(data["PunchLine"] as! String)"
+        
+        //UI Improvements
+        cell.Joke.layer.cornerRadius = 10
+        cell.Joke.layer.masksToBounds = true
+        cell.punchLine.layer.cornerRadius = 10
+        cell.punchLine.layer.masksToBounds = true
         
         
         //time conversion

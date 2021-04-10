@@ -13,16 +13,26 @@ class PostViewController: UIViewController {
 
     @IBOutlet weak var TextField: UITextView!
     
-    @IBOutlet weak var SubmissionField: UIStackView!
+    @IBOutlet weak var punchLineSubmissionField: UITextView!
     
     @IBOutlet weak var warning: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //making the UI look nicer
         TextField.backgroundColor = .gray
         TextField.layer.borderColor = CGColor(red: 255, green: 0, blue: 0, alpha: 0)
-        TextField.layer.borderWidth = 10
+        TextField.layer.borderWidth = 5
+        TextField.layer.cornerRadius = 5
+        TextField.layer.masksToBounds = true
+
+        
+        punchLineSubmissionField.backgroundColor = .gray
+        punchLineSubmissionField.layer.borderColor = CGColor(red: 0, green: 255, blue: 0, alpha: 0)
+        punchLineSubmissionField.layer.borderWidth = 5
+        punchLineSubmissionField.layer.cornerRadius = 5
+        punchLineSubmissionField.layer.masksToBounds = true
     }
     
     @IBAction func goHome(_ sender: Any) {
@@ -42,28 +52,28 @@ class PostViewController: UIViewController {
                         username = document.data()["username"] as! String
                     }
                 }
+                
+                if(TextField.text == "" || punchLineSubmissionField.text == ""){
+                    warning.isHidden = false
+                    return
+                }
+                db.collection("Posts").addDocument(data:
+                [
+                    "Joke": TextField.text!,
+                    "PunchLine": punchLineSubmissionField.text!,
+                    "UserID": user,
+                    "User": username,
+                    "Likes" : 0,
+                    "Dislikes": 0,
+                    "DateCreated": Date(),
+                    "Comments": 0
+                ]
+                )
+                warning.isHidden = true
+                
+                self.dismiss(animated: true, completion: nil)
             }
         }
-        
-        if(TextField.text == ""){
-            warning.isHidden = false
-            return
-        }
-        
-        db.collection("Posts").addDocument(data:
-        [
-            "Joke": TextField.text!,
-            "UserID": user,
-            "User": username,
-            "Likes" : 0,
-            "Dislikes": 0,
-            "DateCreated": Date(),
-            "Comments": 0
-        ]
-        )
-        warning.isHidden = true
-        
-        self.dismiss(animated: true, completion: nil)
     }
     
 }
