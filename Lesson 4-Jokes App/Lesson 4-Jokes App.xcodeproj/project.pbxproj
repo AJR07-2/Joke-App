@@ -14,6 +14,8 @@
 		3A174840261820F5006BF21A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A17483E261820F5006BF21A /* Main.storyboard */; };
 		3A174842261820F7006BF21A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A174841261820F7006BF21A /* Assets.xcassets */; };
 		3A174845261820F7006BF21A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A174843261820F7006BF21A /* LaunchScreen.storyboard */; };
+		3A1CEB762627292600ACAECA /* postDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1CEB752627292600ACAECA /* postDetails.swift */; };
+		3A1CEB7926272B6600ACAECA /* APIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1CEB7826272B6600ACAECA /* APIViewController.swift */; };
 		3A4A8EBB261F036700E0908A /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4A8EBA261F036700E0908A /* SettingsViewController.swift */; };
 		3A4A8EC2261F039D00E0908A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4A8EC1261F039D00E0908A /* LoginViewController.swift */; };
 		3A4A8EC6261F03A700E0908A /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4A8EC5261F03A700E0908A /* SignUpViewController.swift */; };
@@ -32,6 +34,8 @@
 		3A174841261820F7006BF21A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3A174844261820F7006BF21A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3A174846261820F7006BF21A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3A1CEB752627292600ACAECA /* postDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = postDetails.swift; sourceTree = "<group>"; };
+		3A1CEB7826272B6600ACAECA /* APIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIViewController.swift; sourceTree = "<group>"; };
 		3A4A8EBA261F036700E0908A /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		3A4A8EC1261F039D00E0908A /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		3A4A8EC5261F03A700E0908A /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
@@ -89,6 +93,7 @@
 				3AB84714261C992100B1DD90 /* Post */,
 				3AB84712261C990E00B1DD90 /* App+Scene */,
 				3A8CA719261C4E140021FB96 /* View Controllers */,
+				3A1CEB752627292600ACAECA /* postDetails.swift */,
 				3A17483E261820F5006BF21A /* Main.storyboard */,
 				3A174841261820F7006BF21A /* Assets.xcassets */,
 				3A174843261820F7006BF21A /* LaunchScreen.storyboard */,
@@ -103,6 +108,7 @@
 			children = (
 				3A17483C261820F5006BF21A /* ViewController.swift */,
 				3A8CA715261C4E0D0021FB96 /* PostViewController.swift */,
+				3A1CEB7826272B6600ACAECA /* APIViewController.swift */,
 				3A4A8EBA261F036700E0908A /* SettingsViewController.swift */,
 				3A4A8EC1261F039D00E0908A /* LoginViewController.swift */,
 				3A4A8EC5261F03A700E0908A /* SignUpViewController.swift */,
@@ -259,6 +265,8 @@
 				3A174839261820F5006BF21A /* AppDelegate.swift in Sources */,
 				3A17483B261820F5006BF21A /* SceneDelegate.swift in Sources */,
 				3AB8470F261C990400B1DD90 /* Post.swift in Sources */,
+				3A1CEB7926272B6600ACAECA /* APIViewController.swift in Sources */,
+				3A1CEB762627292600ACAECA /* postDetails.swift in Sources */,
 				3A4A8EBB261F036700E0908A /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

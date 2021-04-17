@@ -76,6 +76,17 @@ class ViewController: UIViewController {
         }
     }
     
+    @IBAction func API(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        
+        if let API = storyboard.instantiateViewController(withIdentifier: "API") as? APIViewController{
+            self.present(API, animated: true, completion: nil)
+        }else{
+            print("Something went wrong :(")
+        }
+    }
+    
+    
     //fetching post data from firebase
     func fetchPosts(){
         let database = FirebaseFirestore.Firestore.firestore()
@@ -124,7 +135,6 @@ extension ViewController: UITableViewDataSource{
         cell.Joke.text = "\(data["Joke"] as! String)"
         cell.punchLine.text = "\(data["PunchLine"] as! String)"
         cell.votes.text = "\(data["Rating"] as! Int)"
-        print(data)
         
         //UI Improvementsr
         cell.Joke.layer.cornerRadius = 10
