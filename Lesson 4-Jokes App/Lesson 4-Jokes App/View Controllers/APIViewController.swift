@@ -81,7 +81,7 @@ class APIViewController: UIViewController {
                 do{
                     if(json.joke.components(separatedBy: "?").count < 2){
                         print("Joke couldn't be intepretated properly")
-                        updateData(joke: json.joke, punchline: "Unable to be parsed, click next")
+                        updateData(joke: json.joke, punchline: "Unable to be parsed, click next", update: false)
                         return
                     }
                     let joke = json.joke.components(separatedBy: "?")[0] + "?"
@@ -101,8 +101,11 @@ class APIViewController: UIViewController {
         task.resume()
     }
     
-    func updateData(joke jokeParsed: String, punchline punchlineParsed: String){
+    func updateData(joke jokeParsed: String, punchline punchlineParsed: String, update: Bool = true){
         DispatchQueue.main.async {
+            if(!update){
+                self.revealPunchline.isHidden = true
+            }
             self.joke.text = jokeParsed
             self.punchline.text = punchlineParsed
         }
