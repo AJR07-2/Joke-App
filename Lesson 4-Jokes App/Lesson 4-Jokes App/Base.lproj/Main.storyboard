@@ -557,10 +557,11 @@
                                             </button>
                                         </subviews>
                                     </stackView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="33I-SM-w9r">
-                                        <rect key="frame" x="37" y="172.5" width="300" height="24.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading..." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="33I-SM-w9r">
+                                        <rect key="frame" x="37" y="160.5" width="300" height="60"/>
                                         <color key="backgroundColor" red="1" green="0.18142545090000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="60" id="C3c-kF-Bc0"/>
                                             <constraint firstAttribute="width" constant="300" id="ujb-Og-PWi"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="17"/>
@@ -568,17 +569,18 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sAS-8Z-qir">
-                                        <rect key="frame" x="119.5" y="345" width="135" height="37"/>
+                                        <rect key="frame" x="119.5" y="357" width="135" height="37"/>
                                         <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="17"/>
                                         <state key="normal" title="Reveal Punchline"/>
                                         <connections>
                                             <action selector="revealPunchline:" destination="GkZ-Oj-Be3" eventType="touchUpInside" id="J0V-IM-cez"/>
                                         </connections>
                                     </button>
-                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Punchline" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pu3-ru-pC9" userLabel="Punchline">
-                                        <rect key="frame" x="37" y="382" width="300" height="0.0"/>
+                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Punchline" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pu3-ru-pC9" userLabel="Punchline">
+                                        <rect key="frame" x="37" y="394" width="300" height="60"/>
                                         <color key="backgroundColor" red="0.26588070190000002" green="1" blue="0.31122630220000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="J1o-sN-5Zi"/>
                                             <constraint firstAttribute="width" constant="300" id="evJ-lO-19t"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="17"/>

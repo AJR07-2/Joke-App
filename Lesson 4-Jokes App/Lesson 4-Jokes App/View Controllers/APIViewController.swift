@@ -45,6 +45,8 @@ class APIViewController: UIViewController {
     @IBAction func nextJoke(_ sender: Any) {
         joke.text = "Loading..."
         punchline.text = "Loading..."
+        punchline.isHidden = true
+        revealPunchline.isHidden = false
         generateJoke()
     }
     
@@ -59,6 +61,7 @@ class APIViewController: UIViewController {
             
             guard let data = data, error2 == nil else{
                 print("Something went wrong")
+                alert(title: "Something went wrong", action: "OK", message: "An unexpected error ocurred")
                 return
             }
             
@@ -70,19 +73,25 @@ class APIViewController: UIViewController {
                 print("failed to convert")
                 print(data)
                 print(error)
+                alert(title: "Failed to convert", action: "OK", message: "An unexpected error ocurred")
             }
             
             if let json = result{
                 
-                print(json.joke.components(separatedBy: ".").count, json.joke.components(separatedBy: "."))
-                
-//                let joke = json.joke.components(separatedBy: ".")[0]
-//
-//                let punchline = json.joke.components(separatedBy: ".")[1]
-                
-                //updateData(joke: joke, punchline: punchline)
-                
-                print("Joke parsed sucessfully")
+                do{
+                    if(json.joke.components(separatedBy: "?").count < 2){
+                        print("Joke couldn't be intepretated properly")
+                        updateData(joke: json.joke, punchline: "Unable to be parsed, click next")
+                        return
+                    }
+                    let joke = json.joke.components(separatedBy: "?")[0] + "?"
+                    
+                    let punchline = json.joke.components(separatedBy: "?")[1]
+                    
+                    updateData(joke: joke, punchline: punchline)
+                    print("Joke parsed sucessfully")
+                }
+
             } else{
                 print("could not parse joke")
                 return
@@ -93,8 +102,20 @@ class APIViewController: UIViewController {
     }
     
     func updateData(joke jokeParsed: String, punchline punchlineParsed: String){
-        joke.text = jokeParsed
-        punchline.text = punchlineParsed
+        DispatchQueue.main.async {
+            self.joke.text = jokeParsed
+            self.punchline.text = punchlineParsed
+        }
+    }
+    
+    
+    func alert(title: String, action: String, message: String){
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: NSLocalizedString(action, comment: "Default action"), style: .cancel, handler: { _ in
+            
+        }))
+        self.present(alert, animated: true, completion: nil)
+
     }
 }
 
