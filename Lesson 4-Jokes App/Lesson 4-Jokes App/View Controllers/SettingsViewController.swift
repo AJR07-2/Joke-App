@@ -9,30 +9,26 @@ import UIKit
 import FirebaseAuth
 
 class SettingsViewController: UIViewController {
-    @IBOutlet weak var signUp: UIButton!
-    @IBOutlet weak var login: UIButton!
-    @IBOutlet weak var signOut: UIButton!
+    @IBOutlet weak var loginView: UIStackView!
+    @IBOutlet weak var userInfoView: UIStackView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         //check if user should be signed in/signed up
         if(FirebaseAuth.Auth.auth().currentUser == nil){
-            signUp.isHidden = false
-            login.isHidden = false
-            signOut.isHidden = true
+            userInfoView.isHidden = true
+            loginView.isHidden = false
         }else{
-            signUp.isHidden = true
-            login.isHidden = true
-            signOut.isHidden = false
+            userInfoView.isHidden = false
+            loginView.isHidden = true
         }
     }
     
     @IBAction func signOut(_ sender: Any) {
         do{
             try FirebaseAuth.Auth.auth().signOut()
-            signUp.isHidden = false
-            login.isHidden = false
-            signOut.isHidden = true
+            userInfoView.isHidden = true
+            loginView.isHidden = false
         } catch {
             let alert = UIAlertController(title: "Error", message: "An Error Ocurred", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .cancel, handler: { _ in
@@ -64,6 +60,16 @@ class SettingsViewController: UIViewController {
         if let login = storyboard.instantiateViewController(withIdentifier: "Login") as? LoginViewController{
             self.present(login, animated: true, completion: nil)
             self.viewDidLoad()
+        }else{
+            print("Something went wrong :(")
+        }
+    }
+    
+    @IBAction func favourite(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        
+        if let favourites = storyboard.instantiateViewController(withIdentifier: "Favourites") as? FavouritesViewController{
+            self.present(favourites, animated: true, completion: nil)
         }else{
             print("Something went wrong :(")
         }
