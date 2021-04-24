@@ -135,7 +135,7 @@ extension ViewController: UITableViewDataSource{
         cell.Joke.text = "\(data["Joke"] as! String)"
         cell.punchLine.text = "\(data["PunchLine"] as! String)"
         cell.votes.text = "\((data["Upvotes"] as! Int) - (data["Downvotes"] as! Int))"
-        cell.id = "\(data["docID"] as! String)"
+        cell.id = "\(data["DocID"] as! String)"
         
         //UI Improvementsr
         cell.Joke.layer.cornerRadius = 10
@@ -154,7 +154,7 @@ extension ViewController: UITableViewDataSource{
         let reConvertedDate = dateFormatter.string(from: convertedDate)
         
         cell.Time.text = "\(reConvertedDate)"
-        
+        cell.checkVoted()
         return cell
     }
     
