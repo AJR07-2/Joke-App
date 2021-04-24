@@ -134,7 +134,8 @@ extension ViewController: UITableViewDataSource{
         cell.Number.text = "\(indexPath[1] + 1)"
         cell.Joke.text = "\(data["Joke"] as! String)"
         cell.punchLine.text = "\(data["PunchLine"] as! String)"
-        cell.votes.text = "\(data["Rating"] as! Int)"
+        cell.votes.text = "\((data["Upvotes"] as! Int) - (data["Downvotes"] as! Int))"
+        cell.id = "\(data["docID"] as! String)"
         
         //UI Improvementsr
         cell.Joke.layer.cornerRadius = 10

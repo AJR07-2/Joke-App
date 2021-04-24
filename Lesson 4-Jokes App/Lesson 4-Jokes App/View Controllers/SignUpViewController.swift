@@ -73,7 +73,7 @@ class SignUpViewController: UIViewController {
         if(userID == nil){
             return
         }
-        FirebaseFirestore.Firestore.firestore().collection("User").addDocument(data: [
+        FirebaseFirestore.Firestore.firestore().collection("User").document(userID!).setData([
             "username": username.text!,
             "email": email.text!,
             "uid": FirebaseAuth.Auth.auth().currentUser!.uid,

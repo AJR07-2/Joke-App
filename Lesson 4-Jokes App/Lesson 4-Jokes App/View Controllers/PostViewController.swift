@@ -42,7 +42,22 @@ class PostViewController: UIViewController {
     @IBAction func submitPost(_ sender: Any) {
         let db = FirebaseFirestore.Firestore.firestore()
         let user = FirebaseAuth.Auth.auth().currentUser?.uid as! String
+        
+        //obtain username
         var username:String = ""
+        FirebaseFirestore.Firestore.firestore().collection("User").getDocuments() { [self] (querySnapshot, err) in
+            if let err = err {
+                print("Error getting documents: \(err)")
+            } else {
+                for document in querySnapshot!.documents {
+                    if (document.documentID  == FirebaseAuth.Auth.auth().currentUser?.uid){
+                        username = document.data()["username"] as! String
+                    }
+                }
+            }
+        }
+        
+        //add the data
         FirebaseFirestore.Firestore.firestore().collection("User").getDocuments() { [self] (querySnapshot, err) in
             if let err = err {
                 print("Error getting documents: \(err)")
@@ -68,7 +83,7 @@ class PostViewController: UIViewController {
                     "Comments": 0,
                     "Upvotes" : 0,
                     "Downvotes": 0,
-                    "Rating": 0
+                    "DocID": docID
                 ]
                 )
                 warning.isHidden = true

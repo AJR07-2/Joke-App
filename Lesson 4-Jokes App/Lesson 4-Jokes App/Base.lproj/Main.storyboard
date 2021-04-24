@@ -235,12 +235,29 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="zrz-oq-cfG" userLabel="userCard">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="260"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pqb-Ne-W9S" userLabel="Username">
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="H2d-Ie-xmE">
                                                         <rect key="frame" x="0.0" y="0.0" width="414" height="130"/>
-                                                        <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="23"/>
-                                                        <nil key="textColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jlf-Sa-X0Q" userLabel="usernameLabe">
+                                                                <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="17"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BhH-tg-81w" userLabel="usernameTextField">
+                                                                <rect key="frame" x="0.0" y="43.5" width="414" height="43"/>
+                                                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="17"/>
+                                                                <textInputTraits key="textInputTraits"/>
+                                                            </textField>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="neN-I7-xOM">
+                                                                <rect key="frame" x="0.0" y="86.5" width="414" height="43.5"/>
+                                                                <state key="normal" title="Change"/>
+                                                                <connections>
+                                                                    <action selector="changeUsername:" destination="I4i-rH-1ED" eventType="touchUpInside" id="5Fj-Gn-Chu"/>
+                                                                </connections>
+                                                            </button>
+                                                        </subviews>
+                                                    </stackView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Vh-hX-iXI">
                                                         <rect key="frame" x="0.0" y="130" width="414" height="130"/>
                                                         <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="20"/>
@@ -316,8 +333,10 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="email" destination="3Vh-hX-iXI" id="VgI-44-CEt"/>
                         <outlet property="loginView" destination="kyl-qv-WBJ" id="Gcz-jl-TpV"/>
                         <outlet property="userInfoView" destination="brA-o4-mDP" id="NdV-uP-eye"/>
+                        <outlet property="usernameLabel" destination="BhH-tg-81w" id="7Or-en-j4q"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ckw-oO-0f8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

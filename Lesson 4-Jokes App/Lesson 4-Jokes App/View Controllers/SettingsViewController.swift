@@ -7,10 +7,16 @@
 
 import UIKit
 import FirebaseAuth
+import FirebaseFirestore
 
 class SettingsViewController: UIViewController {
     @IBOutlet weak var loginView: UIStackView!
     @IBOutlet weak var userInfoView: UIStackView!
+    
+    @IBOutlet weak var usernameLabel: UITextField!
+    @IBOutlet weak var email: UILabel!
+    
+    //user info lables
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,6 +27,39 @@ class SettingsViewController: UIViewController {
         }else{
             userInfoView.isHidden = false
             loginView.isHidden = true
+            email.text = FirebaseAuth.Auth.auth().currentUser?.email
+            
+            FirebaseFirestore.Firestore.firestore().collection("User").getDocuments() { [self] (querySnapshot, err) in
+                if let err = err {
+                    print("Error getting documents: \(err)")
+                } else {
+                    for document in querySnapshot!.documents {
+                        if (document.documentID  == FirebaseAuth.Auth.auth().currentUser?.uid){
+                            let data = document.data()
+                            usernameLabel.text = data["username"] as? String
+                            break
+                        }
+                    }
+                }
+            }
+            
+        }
+    }
+    
+    @IBAction func changeUsername(_ sender: Any) {
+        FirebaseFirestore.Firestore.firestore().collection("User").getDocuments() { [self] (querySnapshot, err) in
+            if let err = err {
+                print("Error getting documents: \(err)")
+            } else {
+                for document in querySnapshot!.documents {
+                    if (document.documentID  == FirebaseAuth.Auth.auth().currentUser?.uid){
+                        var data = document.data()
+                        data["username"] = usernameLabel.text
+                        FirebaseFirestore.Firestore.firestore().collection("User").document(FirebaseAuth.Auth.auth().currentUser?.uid as! String).setData(data)
+                        break
+                    }
+                }
+            }
         }
     }
     

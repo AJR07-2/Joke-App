@@ -7,8 +7,10 @@
 
 import UIKit
 import FirebaseAuth
+import FirebaseFirestore
 
 class Post: UITableViewCell {
+    var id: String
     
     //details on post
     @IBOutlet var Number: UILabel!
@@ -31,6 +33,7 @@ class Post: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        checkVoted()
         if (FirebaseAuth.Auth.auth().currentUser == nil){
             favouriteButton.isHidden = true
             upvote.isHidden = true
@@ -46,10 +49,9 @@ class Post: UITableViewCell {
     
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
     
+    //button press reactions
     @IBAction func favourite(_ sender: Any) {
         
     }
@@ -68,6 +70,31 @@ class Post: UITableViewCell {
         punchLine.alpha = 0
         UIView.animate(withDuration: 3) {
             self.punchLine.alpha = 1
+        }
+    }
+    
+    func vote(){
+        
+    }
+    
+    func checkVoted(){
+        FirebaseFirestore.Firestore.firestore().collection("Posts").document(id).collection("RatingHistory").getDocuments() { [self] (querySnapshot, err) in
+            if let err = err {
+                print("Error getting documents: \(err)")
+            } else {
+                for document in querySnapshot!.documents {
+                    if(document.documentID == FirebaseAuth.Auth.auth().currentUser?.uid){
+                        if(document.data()["Contributions"] as! Int == 1){
+                            upvote.alpha = 1
+                        }else{
+                            downvote.alpha = 1
+                        }
+                        break
+                    }
+                }
+            }
+            upvote.alpha = 0.5
+            downvote.alpha = 0.5
         }
     }
 }
