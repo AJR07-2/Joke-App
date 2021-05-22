@@ -33,8 +33,7 @@ class Post: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
-       // checkVoted()
+        checkVoted()
         if (FirebaseAuth.Auth.auth().currentUser == nil){
             favouriteButton.isHidden = true
             upvote.isHidden = true
